@@ -1,0 +1,13 @@
+name: backend-compose
+services:
+  catalog:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+       DB_HOST: host.docker.internal
+       DB_NAME: appdb
+       DB_USER: binit
+       DB_PASSWORD: "binit@123"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
